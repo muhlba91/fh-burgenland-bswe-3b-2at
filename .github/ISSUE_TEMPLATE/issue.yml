@@ -1,0 +1,36 @@
+---
+name: Issue
+description: File any type of issue.
+title: "[Issue] "
+labels:
+  - triage
+  - help wanted
+assignees:
+  - muhlba91
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to file an issue!
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Tell us what your request is about. Please be specific enough for an external developer and our technical product owner to understand it.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria / Test Cases
+      description: Tell us about your use case and how we can verify it when working on it.
+      placeholder: Please explain in the test/use cases relevant to this request, and include possible acceptance criteria.
+    validations:
+      required: false
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: Additional Information
+      description: Let us know any additional information.
+    validations:
+      required: false

@@ -1,0 +1,37 @@
+---
+name: Assignment Submission
+description: Submit your assignment.
+title: "[Submission] <YOUR_IDENTIFIER>"
+labels:
+  - documentation
+assignees:
+  - muhlba91
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **By submitting your assignment you certify that the submitted work is wholly your own work.**
+  - type: input
+    id: name
+    attributes:
+      label: Identifier
+      description: Please fill in your identifier (name, student id, ...).
+      placeholder: e.g. John Doe
+    validations:
+      required: true
+  - type: input
+    id: repository_url
+    attributes:
+      label: Repository URL
+      description: Please fill in the URL of your repository.
+      placeholder: e.g. https://github.com/muhlba91/fh-burgenland-bswe-3b-2at
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you certify that the submitted work is wholly your own work.
+      options:
+        - label: I certify that the submitted work is wholly my own work.
+          required: true
