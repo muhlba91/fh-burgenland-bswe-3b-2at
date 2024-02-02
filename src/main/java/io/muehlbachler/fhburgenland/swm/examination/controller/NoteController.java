@@ -20,14 +20,25 @@ import io.muehlbachler.fhburgenland.swm.examination.service.PersonService;
 @RestController
 @RequestMapping("note")
 public class NoteController {
+
+
     @Autowired
     private NoteService noteService;
 
+    /**
+     *  retrieves a note by its unique id
+     * @param id the unique id of the note
+     * @return  response entity with the note, or empty if the note doesnt exist
+     */
     @GetMapping("/{id}")
     public ResponseEntity<Note> get(@PathVariable String id) {
         return ResponseEntity.of(noteService.get(id));
     }
 
+    /**
+     *  retrieves all notes based on a specific content query
+     * @return  list of notes that match the query
+     */
     @GetMapping("/query")
     public List<Note> query(@RequestParam("query") String query) {
         return noteService.queryByContent(query);
