@@ -36,7 +36,9 @@ public class NoteController {
     }
 
     /**
+     *
      *  retrieves all notes based on a specific content query
+     * @param query the query to search for
      * @return  list of notes that match the query
      */
     @GetMapping("/query")
