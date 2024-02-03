@@ -31,6 +31,11 @@ public class Note {
     private Person person;
     private String content;
 
+    public Note(String number, String someNote) {
+        this.id = number;
+        this.content = someNote;
+    }
+
     @Override
     public String toString() {
         return "Note [belongsTo=" + this.person + ", text=" + this.content + "]";
