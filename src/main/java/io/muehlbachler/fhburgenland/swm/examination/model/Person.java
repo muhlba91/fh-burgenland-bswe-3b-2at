@@ -30,6 +30,9 @@ public class Person {
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Note> notes;
 
+    public Person(String john, String doe) {
+    }
+
     @Override
     public String toString() {
         return "Person [firstName=" + this.firstName + ", lastName=" + this.lastName + "]";
