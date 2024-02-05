@@ -23,10 +23,24 @@ public class NoteController {
     @Autowired
     private NoteService noteService;
 
+    /**
+     * Retrieves a Note entity by its ID.
+     *
+     * @param id The ID of the Note to be retrieved.
+     * @return ResponseEntity containing the retrieved Note if found, or empty if not found.
+     */
+
     @GetMapping("/{id}")
     public ResponseEntity<Note> get(@PathVariable String id) {
         return ResponseEntity.of(noteService.get(id));
     }
+
+    /**
+     * Queries Note entities based on the provided content.
+     *
+     * @param query The content to be used for querying Notes.
+     * @return List of Note entities matching the query.
+     */
 
     @GetMapping("/query")
     public List<Note> query(@RequestParam("query") String query) {
