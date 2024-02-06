@@ -19,6 +19,9 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+/**
+ * Tests for the NoteController class.
+ */
 @ExtendWith(MockitoExtension.class)
 public class NoteControllerTests {
     @Mock
@@ -38,7 +41,8 @@ public class NoteControllerTests {
 
         assertEquals(HttpStatus.OK, noteResponse.getStatusCode(), "Note should be found");
         assertNotNull(noteResponse.getBody(), "Note should not be null");
-        assertEquals("Some content", noteResponse.getBody().getContent(), "Note content should be 'Some content'");
+        assertEquals("Some content", noteResponse.getBody().getContent(),
+                "Note content should be 'Some content'");
     }
 
 

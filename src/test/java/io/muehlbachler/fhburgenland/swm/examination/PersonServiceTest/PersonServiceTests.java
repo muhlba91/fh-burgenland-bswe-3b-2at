@@ -1,4 +1,5 @@
 package io.muehlbachler.fhburgenland.swm.examination.PersonServiceTest;
+
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 import io.muehlbachler.fhburgenland.swm.examination.repository.NoteRepository;
@@ -10,17 +11,17 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 
+/**
+ * Tests for the PersonService class.
+ */
 @ExtendWith(MockitoExtension.class)
-
 public class PersonServiceTests {
 
     @Mock
@@ -76,7 +77,8 @@ public class PersonServiceTests {
         List<Person> persons = new ArrayList<>();
         persons.add(new Person("1", "John", "Doe"));
 
-        Mockito.when(personRepository.findByFirstNameAndLastName(firstName, lastName)).thenReturn(persons);
+        Mockito.when(personRepository.findByFirstNameAndLastName(firstName, lastName))
+                        .thenReturn(persons);
 
         List<Person> result = personService.findByName(firstName, lastName);
 

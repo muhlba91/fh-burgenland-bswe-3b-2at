@@ -12,6 +12,9 @@ import io.muehlbachler.fhburgenland.swm.examination.service.NoteService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+/**
+ * Service for managing Note entities.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Service

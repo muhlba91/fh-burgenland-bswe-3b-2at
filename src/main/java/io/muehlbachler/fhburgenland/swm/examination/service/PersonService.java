@@ -6,6 +6,9 @@ import java.util.Optional;
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 
+/**
+ * Service for managing Person entities.
+ */
 public interface PersonService {
 
     /**
@@ -13,7 +16,7 @@ public interface PersonService {
      *
      * @return List of all Persons.
      */
-    public List<Person> getAll();
+    List<Person> getAll();
 
 
     /**
@@ -22,7 +25,7 @@ public interface PersonService {
      * @param id The unique identifier of the Person.
      * @return Optional containing the retrieved Person or empty if not found.
      */
-    public Optional<Person> get(String id);
+    Optional<Person> get(String id);
 
 
     /**
@@ -31,7 +34,7 @@ public interface PersonService {
      * @param person The Person object to be created.
      * @return The created Person entity.
      */
-    public Person create(Person person);
+    Person create(Person person);
 
 
     /**
@@ -42,7 +45,7 @@ public interface PersonService {
      * @param lastName  The last name used for filtering.
      * @return List of Persons matching the provided first and last name.
      */
-    public List<Person> findByName(String firstName, String lastName);
+    List<Person> findByName(String firstName, String lastName);
 
     /**
      * Creates a new Note for a specified Person.
@@ -51,5 +54,5 @@ public interface PersonService {
      * @param note The Note object to be associated with the Person.
      * @return The created Note entity.
      */
-    public Optional<Note> createNote(String personId, Note note);
+    Optional<Note> createNote(String personId, Note note);
 }

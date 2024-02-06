@@ -1,4 +1,5 @@
 package io.muehlbachler.fhburgenland.swm.examination.NoteService;
+
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 import io.muehlbachler.fhburgenland.swm.examination.repository.NoteRepository;
 import io.muehlbachler.fhburgenland.swm.examination.service.impl.NoteServiceImpl;
@@ -8,16 +9,16 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.eq;
 
+/**
+ * Tests for the NoteService class.
+ */
 @ExtendWith(MockitoExtension.class)
 public class NoteServiceTests {
 

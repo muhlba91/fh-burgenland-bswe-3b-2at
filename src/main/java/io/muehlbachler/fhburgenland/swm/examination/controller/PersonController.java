@@ -1,7 +1,6 @@
 package io.muehlbachler.fhburgenland.swm.examination.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,14 +10,20 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 import io.muehlbachler.fhburgenland.swm.examination.service.PersonService;
 
+/**
+ * Controller for managing Person entities.
+ */
 @RestController
 @RequestMapping("person")
 public class PersonController {
+
+    /**
+     * Service for managing Person entities.
+     */
     @Autowired
     private PersonService personService;
 
@@ -62,7 +67,8 @@ public class PersonController {
      * @return List of Persons matching the provided first and last names.
      */
     @GetMapping("/query")
-    public List<Person> query(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
+    public List<Person> query(@RequestParam("firstName") String firstName,
+                              @RequestParam("lastName") String lastName) {
         return personService.findByName(firstName, lastName);
     }
 

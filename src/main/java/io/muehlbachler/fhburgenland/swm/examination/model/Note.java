@@ -15,6 +15,10 @@ import lombok.Setter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
+
+/**
+ * Represents a note that is associated with a person.
+ */
 @Getter
 @Setter
 @NoArgsConstructor

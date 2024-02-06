@@ -45,10 +45,18 @@
   </module>
 
   <module name="TreeWalker">
+
     <module name="MissingOverride">
       <property name="javaFiveCompatibility"
                 value="true"/>
     </module>
+
+    <module name="RedundantModifier">
+      <property name="tokens"
+                value="METHOD_DEF"/>
+    </module>
+
+
 
     <module name="ClassMemberImpliedModifier" />
     <module name="InterfaceMemberImpliedModifier"/>

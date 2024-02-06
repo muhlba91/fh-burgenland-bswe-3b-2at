@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 
+/**
+ * Service for managing Note entities.
+ */
 public interface NoteService {
 
     /**
@@ -13,7 +16,7 @@ public interface NoteService {
      * @param id The unique identifier of the Note.
      * @return Optional containing the retrieved Note or empty if not found.
      */
-    Optional<Note> get(String id);
+    public abstract Optional<Note> get(String id);
 
     /**
      * Creates a new Note.
@@ -21,7 +24,7 @@ public interface NoteService {
      * @param note The Note object to be created.
      * @return The created Note entity.
      */
-    Note create(Note note);
+    public abstract Note create(Note note);
 
     /**
      * Queries for Notes based on content.
@@ -29,5 +32,5 @@ public interface NoteService {
      * @param query The content query used to filter Notes.
      * @return List of Notes matching the provided content query.
      */
-    List<Note> queryByContent(String query);
+    public abstract List<Note> queryByContent(String query);
 }

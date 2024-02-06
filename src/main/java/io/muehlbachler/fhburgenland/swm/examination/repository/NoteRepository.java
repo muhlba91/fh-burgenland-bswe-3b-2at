@@ -6,6 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 
+/**
+ * Repository for managing Note entities.
+ */
 public interface NoteRepository extends CrudRepository<Note, String> {
 
     /**

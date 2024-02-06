@@ -15,6 +15,9 @@ import lombok.Setter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
+/**
+ * Represents a person.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -33,12 +36,18 @@ public class Person {
     public Person(String john, String doe) {
     }
 
+    /**
+     * Creates a new Person.
+     */
     @Override
     public String toString() {
         return "Person [firstName=" + this.firstName + ", lastName=" + this.lastName + "]";
     }
 
-public Person(String id, String firstName, String lastName) {
+    /**
+     * Creates a new Person.
+     */
+    public Person(String id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;

@@ -6,6 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 
+/**
+ * Repository for managing Person entities.
+ */
 public interface PersonRepository extends CrudRepository<Person, String> {
 
     /**
