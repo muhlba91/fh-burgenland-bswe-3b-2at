@@ -10,6 +10,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories("io.muehlbachler.fhburgenland.swm.examination.repository")
 public class ExaminationApplication {
 
+	/**
+	 * Main entry point of the application.
+	 *
+	 * @param args The command line arguments.
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(ExaminationApplication.class, args);
 	}
