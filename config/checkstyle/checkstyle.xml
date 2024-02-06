@@ -45,6 +45,11 @@
   </module>
 
   <module name="TreeWalker">
+    <module name="MissingOverride">
+      <property name="javaFiveCompatibility"
+                value="true"/>
+    </module>
+
     <module name="ClassMemberImpliedModifier" />
     <module name="InterfaceMemberImpliedModifier"/>
     <module name="ModifierOrder"/>
