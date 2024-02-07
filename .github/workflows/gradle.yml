@@ -129,7 +129,7 @@ jobs:
       working-directory: ${{ github.workspace }}
 
     - name: Log into GitHub Container Registry
-      run: echo "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" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      run: echo "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" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
     - name: Tag Docker image
       run: docker tag ${{ github.repository }}:latest ghcr.io/${{ github.repository }}
