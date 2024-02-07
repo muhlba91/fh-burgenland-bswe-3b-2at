@@ -82,6 +82,7 @@ jobs:
     needs: hadolint
     permissions:
       contents: read
+    timeout-minutes: 60
 
     steps:
     - uses: actions/checkout@v4
