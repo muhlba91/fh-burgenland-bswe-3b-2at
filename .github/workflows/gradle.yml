@@ -97,7 +97,7 @@ jobs:
         gradle-version: '8.6'
 
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew bootJar
 
 
 
