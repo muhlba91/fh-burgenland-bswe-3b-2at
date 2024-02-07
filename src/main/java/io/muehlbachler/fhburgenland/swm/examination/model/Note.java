@@ -24,7 +24,7 @@ public class Note {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     @Setter(AccessLevel.NONE)
-    private String id;
+    public String  id;
     @JsonIgnore
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id")
@@ -34,5 +34,8 @@ public class Note {
     @Override
     public String toString() {
         return "Note [belongsTo=" + this.person + ", text=" + this.content + "]";
+    }
+
+    public void setId(String number) {
     }
 }

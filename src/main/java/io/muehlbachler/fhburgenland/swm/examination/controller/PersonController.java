@@ -20,7 +20,7 @@ import io.muehlbachler.fhburgenland.swm.examination.service.PersonService;
 @RequestMapping("person")
 public class PersonController {
     @Autowired
-    private PersonService personService;
+    public PersonService personService;
 
     /**
      * Retrieves a list of all Person entities.
