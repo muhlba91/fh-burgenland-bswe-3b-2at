@@ -1,0 +1,114 @@
+openapi: 3.0.0
+info:
+  title: Person API
+  version: 1.0.0
+paths:
+  /person/:
+    get:
+      summary: Retrieve all persons
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+  /person/{id}:
+    get:
+      summary: Retrieve a person by ID
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+    post:
+      summary: Create a new person
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+  /person/query:
+    get:
+      summary: Query persons by first and last name
+      parameters:
+        - in: query
+          name: firstName
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: lastName
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Person'
+  /person/{id}/note:
+    post:
+      summary: Create a new note for a person
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                notes:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  notes:
+                    type: array
+                    items:
+                      type: string
+components:
+  schemas:
+    Person:
+      type: object
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
