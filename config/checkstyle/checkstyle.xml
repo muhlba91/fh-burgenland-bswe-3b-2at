@@ -58,6 +58,19 @@
       <property name="message"
                value="Consider using special escape sequence instead of octal value or Unicode escaped value."/>
     </module>
+
+    /**
+    * Checkstyle module for detecting missing {@code @Override} annotations.
+    *
+    * Ensures that methods overriding superclass methods are properly annotated.
+    *
+    * Configured to consider only the {@code @Override} annotation.
+    */
+
+    <module name="OverrideAnnotation">
+      <property name="ignoreMarkerAnnotations" value="false"/>
+      <property name="annotationNames" value="Override"/>
+    </module>
     <module name="AvoidEscapedUnicodeCharacters">
       <property name="allowEscapesForControlCharacters" value="true"/>
       <property name="allowByTailComment" value="true"/>
