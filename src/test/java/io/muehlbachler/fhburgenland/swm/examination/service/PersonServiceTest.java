@@ -1,4 +1,5 @@
 package io.muehlbachler.fhburgenland.swm.examination.service;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
@@ -24,7 +25,9 @@ import io.muehlbachler.fhburgenland.swm.examination.controller.PersonController;
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 
-
+/**
+ * Unit tests for the {@link PersonService} class.
+ */
 @SpringBootTest
 public class PersonServiceTest {
 
@@ -34,16 +37,14 @@ public class PersonServiceTest {
     @InjectMocks
     private PersonController personController;
 
-    private MockMvc mockMvc;
-
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
     private Person person;
     private Note note;
 
     @BeforeEach
     void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(personController).build();
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(personController).build();
 
         person = new Person("1", "Efo", "Pinsel");
         note = new Note();

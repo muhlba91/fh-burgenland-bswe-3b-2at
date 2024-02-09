@@ -6,6 +6,10 @@ import java.util.Optional;
 import io.muehlbachler.fhburgenland.swm.examination.model.Note;
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 
+/**
+ * Service interface for managing Person entities.
+ */
+
 public interface PersonService {
 
     /**

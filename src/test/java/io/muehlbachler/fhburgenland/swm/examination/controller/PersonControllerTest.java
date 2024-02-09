@@ -1,4 +1,5 @@
 package io.muehlbachler.fhburgenland.swm.examination.controller;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
@@ -17,6 +18,10 @@ import org.springframework.http.ResponseEntity;
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 import io.muehlbachler.fhburgenland.swm.examination.service.PersonService;
 
+/**
+ * Unit tests for the {@link PersonController} class.
+ */
+
 @SpringBootTest
 public class PersonControllerTest {
 
@@ -28,10 +33,11 @@ public class PersonControllerTest {
 
     @Test
     void testGetById() {
-        ResponseEntity<Person> person = personController.get("81150016-8501-4b97-9168-01113e21d8a5");
+        ResponseEntity<Person> person =
+                personController.get("81150016-8501-4b97-9168-01113e21d8a5");
 
         assertEquals(HttpStatus.OK, person.getStatusCode(), "Person should be found");
-        assertEquals("Efo", person.getBody().getFirstName(), "First name should be Efo");
+        assertEquals("John", person.getBody().getFirstName(), "First name should be John");
     }
     /**
      * Test case to verify the listing of persons.
@@ -41,7 +47,7 @@ public class PersonControllerTest {
     void testList() {
         // Mock data
         List<Person> persons = Arrays.asList(
-                new Person("1", "Efo", "Pinsel"),
+                new Person("1", "John", "Doe"),
                 new Person("2", "Ofe", "Pinsel")
         );
         PersonService personService = mock(PersonService.class);
@@ -58,6 +64,7 @@ public class PersonControllerTest {
     /**
      * Test case to verify the creation of a person.
      */
+
     @Test
     void testCreate() {
         // Mock data
@@ -76,23 +83,25 @@ public class PersonControllerTest {
     /**
      * Test case to verify the querying of persons by name.
      */
+
     @Test
     void testQuery() {
         // Mock data
         List<Person> persons = Arrays.asList(
-                new Person("1", "Efo", "Pinsel"),
+                new Person("1", "John", "Doe"),
                 new Person("2", "Ofe", "Pinsel")
         );
         PersonService personService = mock(PersonService.class);
-        when(personService.findByName("Efo", "Pinsel")).thenReturn(persons);
+        when(personService.findByName("John", "Doe")).thenReturn(persons);
 
         // Test the query endpoint
         PersonController personController = new PersonController();
         personController.personService = personService;
-        List<Person> result = personController.query("Efo", "Pinsel");
+        List<Person> result = personController.query("John", "Doe");
 
         assertNotNull(result, "Result should not be null");
         assertEquals(2, result.size(), "List should contain two persons");
-        assertEquals("Efo", result.get(0).getFirstName(), "First name of first person should be Efo");
+        assertEquals("John", result.get(0).getFirstName(),
+                "First name of first person should be John");
     }
 }

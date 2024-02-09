@@ -1,4 +1,5 @@
 package io.muehlbachler.fhburgenland.swm.examination.service;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 

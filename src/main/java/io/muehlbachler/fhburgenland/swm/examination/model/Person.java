@@ -15,6 +15,10 @@ import lombok.Setter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
+/**
+ * Entity class representing a Person.
+ */
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -30,11 +34,20 @@ public class Person {
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Note> notes;
 
+    /**
+     * Constructor for creating a Person with specified ID, first name, and last name.
+     *
+     * @param id        The ID of the Person.
+     * @param firstName The first name of the Person.
+     * @param lastName  The last name of the Person.
+     */
+
     public Person(String id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
     }
+
 
     @Override
     public String toString() {

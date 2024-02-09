@@ -54,12 +54,14 @@ class NoteControllerTests {
      *
      * @throws Exception if an error occurs during the test execution
      */
+
     @Test
     void testGetNoteByIdNotFound() throws Exception {
         when(noteService.get("2")).thenReturn(Optional.empty());
         mockMvc.perform(MockMvcRequestBuilders.get("/note/{id}", "2"))
                 .andExpect(MockMvcResultMatchers.status().isNotFound());
     }
+
     /**
      * Test case to verify the querying of notes by content.
      *

@@ -16,6 +16,10 @@ import io.muehlbachler.fhburgenland.swm.examination.service.PersonService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+/**
+ * Service interface for managing Person entities.
+ */
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Service

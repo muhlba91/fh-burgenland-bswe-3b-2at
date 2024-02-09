@@ -15,6 +15,10 @@ import lombok.Setter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
+/**
+ * Entity class representing a Note.
+ */
+
 @Getter
 @Setter
 @NoArgsConstructor

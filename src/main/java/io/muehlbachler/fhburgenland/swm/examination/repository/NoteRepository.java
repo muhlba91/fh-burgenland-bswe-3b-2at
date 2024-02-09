@@ -11,6 +11,7 @@ import io.muehlbachler.fhburgenland.swm.examination.model.Note;
  */
 public interface NoteRepository extends CrudRepository<Note, String> {
 
+
     /**
      * Retrieves a list of notes containing the specified content.
      *
@@ -18,5 +19,5 @@ public interface NoteRepository extends CrudRepository<Note, String> {
      * @return List of notes containing the specified content.
      */
 
-    List<Note> findByContentContaining(String content);
+     List<Note> findByContentContaining(String content);
 }
