@@ -28,6 +28,9 @@ public class NoteServiceTests {
     @InjectMocks
     private NoteServiceImpl noteService;
 
+    /**
+     * Tests the get method to ensure it retrieves a note by ID successfully.
+     */
     @Test
     public void testGet() {
         String noteId = "1";
@@ -41,6 +44,9 @@ public class NoteServiceTests {
         assertEquals(note, result.get());
     }
 
+    /**
+     * Tests the create method to ensure it creates a new note successfully.
+     */
     @Test
     public void testCreate() {
         Note note = new Note("1", "Some content");
@@ -52,6 +58,9 @@ public class NoteServiceTests {
         assertEquals(note, result);
     }
 
+    /**
+     * Tests the querybycontent method to ensure it searches for notes by content.
+     */
     @Test
     public void testQueryByContent() {
         String query = "Some";

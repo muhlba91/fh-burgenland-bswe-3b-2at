@@ -1,7 +1,6 @@
 package io.muehlbachler.fhburgenland.swm.examination.model;
 
 import java.util.List;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -33,11 +32,11 @@ public class Person {
     @OneToMany(mappedBy = "person", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Note> notes;
 
-    public Person(String john, String doe) {
-    }
 
     /**
-     * Creates a new Person.
+     * Returns a string representation of a Person, including the first and last name.
+     *
+     * @return a string representation of the Person
      */
     @Override
     public String toString() {
@@ -45,7 +44,10 @@ public class Person {
     }
 
     /**
-     * Creates a new Person.
+     * Constructor for a new Person with the specified first name, last name, and an auto-generated ID.
+     *
+     * @param firstName the person's first name
+     * @param lastName  the person's last name
      */
     public Person(String id, String firstName, String lastName) {
         this.id = id;

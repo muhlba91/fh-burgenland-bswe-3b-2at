@@ -16,7 +16,7 @@ public interface NoteService {
      * @param id The unique identifier of the Note.
      * @return Optional containing the retrieved Note or empty if not found.
      */
-    public abstract Optional<Note> get(String id);
+    Optional<Note> get(String id);
 
     /**
      * Creates a new Note.
@@ -24,7 +24,7 @@ public interface NoteService {
      * @param note The Note object to be created.
      * @return The created Note entity.
      */
-    public abstract Note create(Note note);
+    Note create(Note note);
 
     /**
      * Queries for Notes based on content.
@@ -32,5 +32,5 @@ public interface NoteService {
      * @param query The content query used to filter Notes.
      * @return List of Notes matching the provided content query.
      */
-    public abstract List<Note> queryByContent(String query);
+    List<Note> queryByContent(String query);
 }

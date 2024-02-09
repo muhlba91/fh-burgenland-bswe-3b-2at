@@ -35,14 +35,30 @@ public class Note {
     private Person person;
     private String content;
 
+    /**
+     * Creates a new Note.
+     *
+     * @param number   The unique identifier of the Note.
+     * @param someNote The content of the Note.
+     */
     public Note(String number, String someNote) {
         this.id = number;
         this.content = someNote;
     }
 
+    /**
+     * Creates a new Note.
+     *
+     * @param someNote The content of the Note.
+     */
     public Note(String someNote) {
     }
 
+    /**
+     * Retrieves the Person that this Note belongs to.
+     *
+     * @return The Person that this Note belongs to.
+     */
     @Override
     public String toString() {
         return "Note [belongsTo=" + this.person + ", text=" + this.content + "]";

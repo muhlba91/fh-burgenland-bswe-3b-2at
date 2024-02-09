@@ -28,13 +28,4 @@ public interface PersonRepository extends CrudRepository<Person, String> {
      */
     List<Person> findByLastName(String lastName);
 
-    /**
-     * Queries for Persons based on first and last name.
-     * if any name (first or last) is empty, we only search for the other one
-     *
-     * @param firstName The first name used for filtering.
-     * @param lastName  The last name used for filtering.
-     * @return List of Persons matching the provided first and last name.
-     */
-    List<Person> findByFirstNameAndLastName(String firstName, String lastName);
 }

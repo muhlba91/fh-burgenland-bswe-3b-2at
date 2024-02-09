@@ -12,7 +12,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-
 import io.muehlbachler.fhburgenland.swm.examination.model.Person;
 import io.muehlbachler.fhburgenland.swm.examination.repository.PersonRepository;
 import io.muehlbachler.fhburgenland.swm.examination.service.NoteService;
@@ -41,6 +40,9 @@ public class PersonServiceImplTest {
         Mockito.verifyNoMoreInteractions(noteService);
     }
 
+    /**
+     * Tests the getbyid method to ensure it retrieves a person by ID successfully.
+     */
     @Test
     void testGetById() {
         Mockito.when(personRepository.findById("1"))

@@ -10,16 +10,18 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.eq;
 
 @ExtendWith(MockitoExtension.class)
 
 public class PersonServiceTests {
-
 
     @Mock
     private PersonRepository personRepository;
@@ -30,9 +32,6 @@ public class PersonServiceTests {
     @InjectMocks
     private PersonServiceImpl personService;
 
-    /**
-     * Test case to verify the retrieval of all persons.
-     */
     @Test
     public void testGetAll() {
         List<Person> persons = new ArrayList<>();
@@ -45,9 +44,6 @@ public class PersonServiceTests {
         assertEquals(persons, result);
     }
 
-    /**
-     * Test case to verify the retrieval of a person by ID.
-     */
     @Test
     public void testGet() {
         String personId = "1";
@@ -61,11 +57,6 @@ public class PersonServiceTests {
         assertEquals(person, result.get());
     }
 
-
-
-    /**
-     * Test case to verify the creation of a new person.
-     */
     @Test
     public void testCreate() {
         Person person = new Person("1", "John", "Doe");
@@ -77,5 +68,33 @@ public class PersonServiceTests {
         assertEquals(person, result);
     }
 
-
+//    @Test
+//    public void testFindByName() {
+//        String firstName = "John";
+//        String lastName = "Doe";
+//
+//        List<Person> persons = new ArrayList<>();
+//        persons.add(new Person("1", "John", "Doe"));
+//
+//        Mockito.when(personRepository.findByFirstNameAndLastName(firstName, lastName)).thenReturn(persons);
+//
+//        List<Person> result = personService.findByName(firstName, lastName);
+//
+//        assertEquals(persons, result);
+//    }
+//
+//    @Test
+//    public void testCreateNote() {
+//        String personId = "1";
+//        Person person = new Person(personId, "John", "Doe");
+//        Note note = new Note("1", "Some note");
+//
+//        Mockito.when(personRepository.findById(personId)).thenReturn(Optional.of(person));
+//        Mockito.when(noteRepository.save(any(Note.class))).thenReturn(note);
+//
+//        Optional<Note> result = personService.createNote(personId, note);
+//
+//        assertTrue(result.isPresent());
+//        assertEquals(note, result.get());
+//    }
 }
