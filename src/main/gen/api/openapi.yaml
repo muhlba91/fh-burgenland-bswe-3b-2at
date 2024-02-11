@@ -1,0 +1,92 @@
+openapi: 3.0.0
+info:
+  title: Person and Note API
+  version: 1.0.0
+servers:
+- url: /
+paths:
+  /person/{id}:
+    get:
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+          description: Successful response
+      summary: Retrieve a person by ID
+      x-accepts: application/json
+  /person/list:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/Person'
+                type: array
+          description: Successful response
+      summary: Retrieve a list of all persons
+      x-accepts: application/json
+  /person/create:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Person'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Person'
+          description: Successful response
+      summary: Create a new person
+      x-content-type: application/json
+      x-accepts: application/json
+components:
+  schemas:
+    Person:
+      example:
+        firstName: firstName
+        lastName: lastName
+        notes:
+        - id: id
+          content: content
+        - id: id
+          content: content
+        id: id
+      properties:
+        id:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        notes:
+          items:
+            $ref: '#/components/schemas/Note'
+          type: array
+      type: object
+    Note:
+      example:
+        id: id
+        content: content
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+      type: object
+
