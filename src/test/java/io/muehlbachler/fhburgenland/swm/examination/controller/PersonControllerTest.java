@@ -24,7 +24,7 @@ public class PersonControllerTest {
      */
     @Test
     void testGetById() {
-        ResponseEntity<Person> person = personController.get("81150016-8501-4b97-9168-01113e21d8a5");
+        ResponseEntity<Person> person = personController.get("81150016-8501-4b97-9168-01113e21d8a2");
 
         assertEquals(HttpStatus.OK, person.getStatusCode(), "person should be found");
         assertEquals("John", person.getBody().getFirstName(), "firstName should be John");
